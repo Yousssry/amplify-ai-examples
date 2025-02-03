@@ -18,7 +18,7 @@ const KnowledgeBaseDataSource =
     `https://bedrock-runtime.${region}.amazonaws.com`, // Modified URL format
     {
       authorizationConfig: {
-        signingRegion: "us-east-1",
+        signingRegion: region,
         signingServiceName: "bedrock",
       },
     },
