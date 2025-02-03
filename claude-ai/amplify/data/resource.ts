@@ -8,7 +8,7 @@ const schema = a.schema({
     tools: [
       a.ai.dataTool({
         name: 'searchDocumentation',
-        description: 'Performs a similarity search over the documentation for ...',
+        description: 'This is your knowledge base that you get all your information from.',
         query: a.ref('knowledgeBase'),
       }),
     ]
