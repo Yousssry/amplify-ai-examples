@@ -12,7 +12,7 @@ const backend = defineBackend({
 const KnowledgeBaseDataSource =
   backend.data.resources.graphqlApi.addHttpDataSource(
     "KnowledgeBaseDataSource",
-    `https://bedrock-runtime.${cdk.Stack.of(backend.data).region}.amazonaws.com`,
+    'https://bedrock-runtime.${cdk.Stack.of(backend.data).region}.amazonaws.com',
     {
       authorizationConfig: {
         signingRegion: cdk.Stack.of(backend.data).region,
@@ -24,7 +24,7 @@ const KnowledgeBaseDataSource =
 KnowledgeBaseDataSource.grantPrincipal.addToPrincipalPolicy(
   new PolicyStatement({
     resources: [
-      `arn:aws:bedrock:${cdk.Stack.of(backend.data).region}:[account ID]:knowledge-base/GU7YELUG8L`
+      'arn:aws:bedrock:${cdk.Stack.of(backend.data).region}:[account ID]:knowledge-base/GU7YELUG8L'
     ],
     actions: ["bedrock:Retrieve"],
   }),
