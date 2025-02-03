@@ -4,7 +4,7 @@ const schema = a.schema({
 
   chat: a.conversation({
     aiModel: a.ai.model("Claude 3 Sonnet"),
-    systemPrompt: `You are a helpful assistant`,
+    systemPrompt: `You are a helpful assistant. You utilize your knowledge base to get all your information from.`,
     tools: [
       a.ai.dataTool({
         name: 'searchDocumentation',
