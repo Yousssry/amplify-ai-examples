@@ -32,13 +32,6 @@ const schema = a.schema({
     .generation({
       aiModel: a.ai.model("Claude 3.5 Sonnet"),
       systemPrompt: `You are a helpful assistant that writes descriptive names for conversations. Names should be 2-10 words long`,
-      tools: [
-        a.ai.dataTool({
-          name: 'searchDocumentation',
-          description: 'Performs a similarity search over the documentation for ...',
-          query: a.ref('knowledgeBase'),
-        }),
-      ]
     })
     .arguments({
       content: a.string(),
