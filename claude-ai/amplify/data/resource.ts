@@ -16,7 +16,7 @@ const schema = a.schema({
     .authorization((allow) => allow.authenticated()),
 
   chat: a.conversation({
-    aiModel: a.ai.model("Claude 3.5 Sonnet"),
+    aiModel: a.ai.model("Claude 3 Sonnet"),
     systemPrompt: `You are a helpful assistant`,
     tools: [
       a.ai.dataTool({
@@ -30,7 +30,7 @@ const schema = a.schema({
 
   chatNamer: a
     .generation({
-      aiModel: a.ai.model("Claude 3.5 Sonnet"),
+      aiModel: a.ai.model("Claude 3 Sonnet"),
       systemPrompt: `You are a helpful assistant that writes descriptive names for conversations. Names should be 2-10 words long`,
     })
     .arguments({
