@@ -2,19 +2,6 @@ import { type ClientSchema, a, defineData } from "@aws-amplify/backend";
 
 const schema = a.schema({
 
-    
-  knowledgeBase: a
-    .query()
-    .arguments({ input: a.string() })
-    .handler(
-      a.handler.custom({
-        dataSource: "KnowledgeBaseDataSource",
-        entry: "./resolvers/kbResolver.js",
-      }),
-    )
-    .returns(a.string())
-    .authorization((allow) => allow.authenticated()),
-
   chat: a.conversation({
     aiModel: a.ai.model("Claude 3 Sonnet"),
     systemPrompt: `You are a helpful assistant`,
@@ -42,6 +29,18 @@ const schema = a.schema({
       })
     )
     .authorization((allow) => [allow.authenticated()]),
+
+    knowledgeBase: a
+    .query()
+    .arguments({ input: a.string() })
+    .handler(
+      a.handler.custom({
+        dataSource: "KnowledgeBaseDataSource",
+        entry: "./resolvers/kbResolver.js",
+      }),
+    )
+    .returns(a.string())
+    .authorization((allow) => allow.authenticated()),
 });
 
 export type Schema = ClientSchema<typeof schema>;

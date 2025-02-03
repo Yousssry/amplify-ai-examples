@@ -15,7 +15,7 @@ const region = stack.region;
 const KnowledgeBaseDataSource = 
   backend.data.resources.graphqlApi.addHttpDataSource(
     "KnowledgeBaseDataSource",
-    `https://bedrock-runtime.${region}.amazonaws.com`, // Modified URL format
+    `https://bedrock-agent-runtime.${region}.amazonaws.com`, // Modified URL format
     {
       authorizationConfig: {
         signingRegion: region,
